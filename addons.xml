@@ -32,12 +32,12 @@
 	</extension>
 </addon>
 
-<addon id="repository.nic" name="nic repo" version="0.2" provider-name="nic">
+<addon id="repository.nic" name="nic repo" version="0.2.1" provider-name="nic">
     <extension point="xbmc.addon.repository" name="nic repo">
     <dir>
-        <info compressed="false">http://kodirepo.nire.se/kodi/addons.xml</info>
-        <checksum>http://kodirepo.nire.se/kodi/addons.xml.md5</checksum>
-        <datadir zip="true">http://kodirepo.nire.se/kodi/</datadir>
+        <info compressed="false">https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml</info>
+        <checksum>https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml.md5</checksum>
+        <datadir zip="true">https://raw.githubusercontent.com/nrehn/repository.nic/master/</datadir>
     </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
