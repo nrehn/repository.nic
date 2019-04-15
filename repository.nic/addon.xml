@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.nic" name="nic repo" version="0.2.1" provider-name="nic">
+<addon id="repository.nic" name="nic repo" version="0.2.2" provider-name="nic">
     <extension point="xbmc.addon.repository" name="nic repo">
     <dir>
         <info compressed="false">https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml</info>
