@@ -239,7 +239,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.0.0.0~beta4"
+        version="5.0.0.0beta4"
         name="Retrospect"
         provider-name="Bas Rieter">
 
