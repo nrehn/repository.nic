@@ -271,6 +271,30 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.10" provider-name="A Talented Community">
+    <requires>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.six" version="1.11.0"/>
+        <import addon="script.module.requests" version="2.12.4"/>
+    </requires>
+    <extension point="xbmc.python.module" library="resources/lib"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>all</platform>
+        <news>
+[upd] allow overriding headers for all hidden api calls
+        </news>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+        <platform>all</platform>
+        <summary lang="en_GB">Module for interaction with the Twitch.tv API</summary>
+        <description lang="en_GB">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
+        <license>GPL-3.0-only</license>
+        <source>https://github.com/MrSprigster/script.module.python.twitch</source>
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+    </extension>
+</addon>
+
 <addon id="repository.StreamArmy" name="[COLOR crimson]S[COLOR silver]tream Army Repo[/COLOR]" version="10.3" provider-name="@Nemzzy668 / @_Manc_">
     <extension point="xbmc.addon.repository" name="Stream Army">
         <info compressed="false">https://raw.githubusercontent.com/nemesis668/repository.streamarmy/master/addons.xml</info>
