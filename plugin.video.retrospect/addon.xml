@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon  id="plugin.video.retrospect"
+        version="5.1.1"
+        name="Retrospect"
+        provider-name="Bas Rieter">
+
+    <requires>
+        <import addon="xbmc.python" version="2.25.0" />
+        <import addon="script.module.requests" version="2.18.0" />
+        <import addon="script.module.pytz" version="2014.2" />
+        <import addon="inputstream.adaptive" version="2.0.19" />
+        <import addon="plugin.video.youtube" version="6.0.0" optional="true" />
+        <import addon="script.module.inputstreamhelper" version="0.3.5" />
+    </requires>
+
+    <extension  point="xbmc.python.pluginsource"
+                library="retroaddon.py">
+        <provides>video</provides>
+    </extension>
+
+    <extension point="xbmc.service" library="retroservice.py" />
+
+
+    <extension point="kodi.context.item">
+        <menu id="kodi.core.main">
+            <item library="menu_queue.py">
+                <label>30541</label>
+                <visible>ListItem.Property(RetrospectVideo)|ListItem.Property(RetrospectFolder)</visible>
+            </item>
+
+            <item library="menu_hide_channel.py">
+                <label>30574</label>
+                <visible>ListItem.Property(RetrospectChannel)</visible>
+            </item>
+
+            <item library="menu_cloak.py">
+                <label>30563</label>
+                <visible>ListItem.Property(RetrospectFolder)+!ListItem.Property(RetrospectCloaked)+!ListItem.Property(RetrospectFavorite)</visible>
+            </item>
+
+            <item library="menu_uncloak.py">
+                <label>30564</label>
+                <visible>ListItem.Property(RetrospectCloaked)</visible>
+            </item>
+
+            <!-- Channel settings -->
+            <menu>
+                <label>30580</label>
+
+                <item library="menu_bitrate.py">
+                    <label>30577</label>
+                    <visible>ListItem.Property(Retrospect)+!ListItem.Property(RetrospectCategory)+!ListItem.Property(RetrospectFavorite)</visible>
+                </item>
+
+                <item library="menu_adaptive.py">
+                    <label>30579</label>
+                    <visible>ListItem.Property(RetrospectAdaptive)+System.HasAddon(inputstream.adaptive)</visible>
+                </item>
+
+                <item library="menu_channelsettings.py">
+                    <label>30069</label>
+                    <visible>ListItem.Property(RetrospectChannelSettings)+!ListItem.Property(RetrospectCategory)</visible>
+                </item>
+            </menu>
+
+            <!-- Favorites menu -->
+            <menu>
+                <label>30575</label>
+
+                <item library="menu_channel_favs.py">
+                    <label>30503</label>
+                    <visible>ListItem.Property(RetrospectVideo)|ListItem.Property(RetrospectFolder)|ListItem.Property(RetrospectChannel)</visible>
+                </item>
+
+                <item library="menu_all_favs.py">
+                    <label>30500</label>
+                    <visible>ListItem.Property(RetrospectChannel)</visible>
+                </item>
+
+                <item library="menu_add_fav.py">
+                    <label>30504</label>
+                    <visible>ListItem.Property(RetrospectFolder)+!ListItem.Property(RetrospectFavorite)</visible>
+                </item>
+
+                <item library="menu_remove_fav.py">
+                    <label>30506</label>
+                    <visible>ListItem.Property(RetrospectFavorite)</visible>
+                </item>
+            </menu>
+
+            <!-- Retrospect Menu -->
+            <menu>
+                <label>30572</label>
+
+                <item library="menu_channel_selection.py">
+                    <label>30507</label>
+                    <visible>ListItem.Property(RetrospectChannel)</visible>
+                </item>
+
+                <item library="menu_country_selection.py">
+                    <label>30576</label>
+                    <visible>ListItem.Property(RetrospectChannel)</visible>
+                </item>
+
+                <item library="menu_settings.py">
+                    <label>30528</label>
+                    <visible>ListItem.Property(Retrospect)</visible>
+                </item>
+
+                <!--item library="menu_install_widevine.py">
+                    <label>30532</label>
+                    <visible>ListItem.Property(Retrospect)+System.HasAddon(inputstream.adaptive)+System.HasAddon(script.module.inputstreamhelper)</visible>
+                </item-->
+            </menu>
+        </menu>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <reuselanguageinvoker>true</reuselanguageinvoker>
+        <platform>all</platform>
+
+        <summary lang="en_GB">Retrospect enables playback of re-runs/catch-ups of TV shows available online.</summary>
+        <description lang="en_GB">Retrospect uses the official websites and freely available streams of different broadcasting companies (mainly Dutch, Belgian, British, Norwegian and Swedish) to make their re-run/catch-up episodes available on the Kodi platform.[CR][CR]More information can be found at https://rieter.net or the Retrospect wiki at https://github.com/retrospect-addon/plugin.video.retrospect/wiki/.</description>
+        <disclaimer lang="en_GB">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage caused to your system. Nor do we take responsibility for the content that can be watched using this add-on or any consequences of using this add-on to watch content via the content providers' platforms.</disclaimer>
+
+        <summary lang="sv_SE">Retrospect möjliggör att visa playkanaler.</summary>
+        <description lang="sv_SE">Retrospect använder olika TV-kanalers (framförallt nederländska, belgiska, brittiska, norska och svenska) officiella webbsidor och fritt tillgängliga strömmar för att göra deras playkanaler tillgängliga i Kodi.[CR][CR]Mer information finns på https://rieter.net eller Retrospects wiki på https://github.com/retrospect-addon/plugin.video.retrospect/wiki/.</description>
+        <disclaimer lang="sv_SE">Retrospect tillgängliggörs i befintligt skick. Vi tar inget som helst ansvar för möjliga (men högst osannolika) skador på ditt system. Vi tar inte heller ansvar för innehållet som kan ses med detta tillägg eller konsekvenser av att använda tillägget för att se innehållet via innehållsleverantörernas plattformar.</disclaimer>
+
+        <license>CC-BY-NC-SA-4.0</license>
+        <language>en nl de se no lt lv fi</language>
+        <news>[B]Retrospect v5.1.1 - Changelog - 2019-11-14[/B]
+
+There was a rather annoying bug in 5.1.0 that cause Retrospect to run twice each time. We also fixed the NPO Timestamp issue (again).
+
+[B]Framework related[/B]
+* Added: Timezone options to the DateHelper
+* Fixed: we actually ran the add-on twice after the latest 5.1.0 version
+
+[B]GUI/Settings/Language related[/B]
+-
+
+[B]Channel related[/B]
+* Fixed: add time to &#x27;NPO Journaal&#x27; items (Fixes #1253)
+* Added: use pytz to generate dates on a &#x27;broadcast-date&#x27; base (See #1251)
+        </news>
+        <assets>
+            <icon>resources/media/icon.png</icon>
+            <fanart>resources/media/fanart.jpg</fanart>
+            <screenshot>resources/media/retrospect01.jpg</screenshot>
+            <screenshot>resources/media/retrospect02.jpg</screenshot>
+            <screenshot>resources/media/retrospect03.jpg</screenshot>
+        </assets>
+    </extension>
+</addon>
