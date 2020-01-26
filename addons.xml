@@ -313,6 +313,39 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
+<addon id="plugin.video.cmore"
+       version="0.2.0"
+       name="C More"
+       provider-name="emilsvennesson">
+  <requires>
+    <import addon="xbmc.python" version="2.25.0"/>
+    <import addon="script.module.inputstreamhelper" version="0.2.4"/>
+    <import addon="script.module.requests" version="2.9.1"/>
+    <import addon="script.module.routing" version="0.2.0" />
+    <import addon="script.module.iso8601" version="0.1.11" />
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="default.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.service" library="service.py" start="login" />
+  <extension point="xbmc.addon.metadata">
+    <description lang="en_GB">Watch content from C More.</description>
+    <description lang="sv_SE">Titta på innehåll från C More.</description>
+    <news>2017.12.29 v0.2.0
+    + Initial stable release.
+    </news>
+    <platform>all</platform>
+    <license>MIT License</license>
+    <source>https://github.com/emilsvennesson/kodi-cmore</source>
+    <language>sv dk no en</language>
+    <disclaimer>This add-on is completely unofficial and is not endorsed by C More Entertainment in any way.</disclaimer>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.jpg</fanart>
+    </assets>
+  </extension>
+</addon>
+
 <addon id="service.kn.switchtimer" name="KN Switchtimer Service" provider-name="Birger Jesch" version="2.0.12">
     <requires>
         <import addon="xbmc.python" version="2.24.0"/>
@@ -443,7 +476,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id='plugin.video.twitch' version='2.4.7' name='Twitch' provider-name='A Talented Community'>
+<addon id='plugin.video.twitch' version='2.4.8' name='Twitch' provider-name='A Talented Community'>
     <requires>
         <import addon='xbmc.python' version='2.20.0'/>
         <import addon='script.module.six' version='1.11.0'/>
@@ -457,7 +490,11 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point='xbmc.addon.metadata'>
         <platform>all</platform>
         <news>
-[fix] remaining private api calls ie. following games, toggle following games
+[fix] resolve indefinite busy dialog on failed playback
+[fix] sort by viewers for followed live channels, restoring previous behavior
+[fix] menu settings not taking effect
+[fix] handle no stream available error
+[rem] remove Playlists
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -488,7 +525,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.1.4"
+        version="5.1.6"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -617,34 +654,18 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.1.4 - Changelog - 2020-01-05[/B]
+        <news>[B]Retrospect v5.1.6 - Changelog - 2020-01-23[/B]
 
-This update contains some appearances fixes to both Retrospect and some Swedish channels.
+This update contains a fix for VRT.nu that broken again!
 
 [B]Framework related[/B]
 -
 
 [B]GUI/Settings/Language related[/B]
-* Changed: Added more view modes to the channel listings (Fixes #1268)
-* Fixed: Don&#x27;t set dates in titles for Kodi Leia and up (See #1271)
-* Fixed: Don&#x27;t show the &#x27;.:&#x27; in front of favourites (See #1271)
+-
 
 [B]Channel related[/B]
-* Updated: thumbs/fanart for SVT, TV4 and DPlay (See #1268)
-* Added: Add season/episode info instead of &quot;del #&quot; to TV4 (See #1271)
-* Added: Expire date to TV4 items (See #1271 and Fixes #1269)
-* Added: Duration to TV4 shows (See #1271)
-* Updated: Artwork for ViaFree (Fixes #1272)
-* Added: Expire date for ViaFree (Fixes #1272)
-* Changed: Moved to sXXeXX for seasons for ViaFree (Fixes #1272)
-* Fixed: &amp;amp; in SVT subtitles
-* Added: Missing fanart and thumbs to SVT (Fixes #1273)
-* Fixed: `Filmer` category and missing ones in SVT (Fixes #1273)
-* Added: Date to some videos (See #1273)
-* Changed: Filter titles for some videos to not include a date or time (See #1273)
-* Added: Some season information to shows that have it in SVT (See #1273)
-* Updated: a bit more season info for ViaFree (See #1272)
-* Fixed: We removed too much episode information in ee9358b0 (See #1271)
+* Fixed: VRT.nu updated some HTML pages again! (Fixes #1281)
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
