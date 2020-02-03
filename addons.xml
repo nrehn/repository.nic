@@ -271,7 +271,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.5.3~beta1" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.6.0" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -298,6 +298,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
 [lang] pt_br strings |contrib: MediaBrasil|
 [lang] cs_cz strings |contrib: llzn.cz|
 [lang] it_it strings |contrib: SebastianoPistore|
+[lang] de_de strings |contrib: tweimer|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -799,7 +800,7 @@ This update contains a fix for VRT.nu that broken again!
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="0.16.3" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="0.16.4" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -838,6 +839,9 @@ This update contains a fix for VRT.nu that broken again!
     <summary lang="hu_HU">Netflix</summary>
     <description lang="hu_HU">Netflix VOD kiegészítő a Kodihoz</description>
     <disclaimer lang="hu_HU">Előfordulhat, hogy a kiegészítő néhány része nem törvényes az Ön országában - telepítés előtt tájékozódjon a helyi törvényekről.</disclaimer>
+    <summary lang="tr_tr">Netflix</summary>
+    <description lang="tr_tr">Netflix VOD Hizmetleri Eklentisi</description>
+    <disclaimer lang="tr_tr">Bu eklentinin bazı bölümleri ikamet ettiğiniz ülkede yasal olmayabilir - lütfen yüklemeden önce yerel yasalarınıza bakın.</disclaimer>
     <assets>
       <icon>resources/media/icon.png</icon>
       <fanart>resources/media/fanart.jpg</fanart>
@@ -847,7 +851,7 @@ This update contains a fix for VRT.nu that broken again!
       <screenshot>resources/media/screenshot-04.jpg</screenshot>
       <screenshot>resources/media/screenshot-05.jpg</screenshot>
     </assets>
-    <language>en cs de es hr hu it ja ko nl pl pt sv</language>
+    <language>en cs de es hr hu it ja ko nl pl pt sv tr</language>
     <platform>all</platform>
     <license>MIT</license>
     <website>https://www.netflix.com</website>
@@ -855,6 +859,23 @@ This update contains a fix for VRT.nu that broken again!
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
+v0.16.4 (2020-01-28)
+-Up Next is now supported only from version 1.1.0 and up
+-Added czech language
+-Added "because you liked" to recommendations menu
+-Added Up Next install option
+-Implemented Up Next feature, end time information
+-Implemented Up Next feature, fast start next video
+-Fixed the error "Request failed validation during key exchange"
+-Fixed an issue that causing opening Up Next notification in wrong position
+-Fixed html tags in profiles names
+-Fixed STRM files resume workaround
+-Fixed retrieving infolabels from library on python 3
+-Managed user id token key expiration
+-Manifest is saved to hdd with enabled verbose debugging only
+-Updated de, es, hu, it translations
+-Some minor changes, fixes
+
 v0.16.3 (2020-01-18)
 -Fixed an issue that causing addon freeze on export/update to library
 -Fixed an regression issue that causing http error 401
@@ -862,18 +883,6 @@ v0.16.3 (2020-01-18)
 -Fixed an issue that in some cases prevented the export of a tv show season
 -Generally optimized addon speed
 -Many improvements to the code
-
-v0.16.2 (2020-01-07)
--Improved add-on startup
--Improved loading of profiles list
--Added in expert setting a choice to speed up service or addon startup
--Fixed an issue that causing addon misbehaviour using multiple Kodi profiles
--Fixed an issue that causing addon breakage with sqlite connections
--Fixed some python 3 issues on Android
--Handled cases of metadata not available
--Permanently removed sharing Kodi videos settings between profiles
--Updated de, es, it translations
--Minor improvements
     </news>
   </extension>
 </addon>
