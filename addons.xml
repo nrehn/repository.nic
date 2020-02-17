@@ -356,7 +356,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.10" provider-name="A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.11" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -366,7 +366,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[upd] allow overriding headers for all hidden api calls
+[fix] Python 3 - don't decode string when processing clips
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -609,7 +609,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.1.6"
+        version="5.1.8"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -738,18 +738,34 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.1.6 - Changelog - 2020-01-23[/B]
+        <news>[B]Retrospect v5.1.8 - Changelog - 2020-02-13[/B]
 
-This update contains a fix for VRT.nu that broken again!
+This is a quick fix for an NPO issue. It also contains from version 5.1.7:
+That update contains fixes for a number of channels (Dutch, Swedish, Belgian and Norwegian). We
+also added some small improvements such as &quot;air date&quot; infolabels and a new context menu entry to
+show the video information dialog window.
 
 [B]Framework related[/B]
 -
 
 [B]GUI/Settings/Language related[/B]
--
+* Added: context menu to show the video info dialog (See #1288)
+* Added: show &quot;air date&quot; as InfoLabel if a date is available
 
 [B]Channel related[/B]
+* Fixed: refactoring broke NPO &#x27;recent items&#x27; (Fixes #1295)
+* Fixed: Most recent shows were not working for NRK.no (Fixes #1274)
+* Fixed: missing video item type &#x27;Variant&#x27; caused missing episodes (Fixes #1284)
+* Updated: MTG Viafree channel - enhance look and feel (Fixes #1285)
 * Fixed: VRT.nu updated some HTML pages again! (Fixes #1281)
+* Fixed: SVT Live channels (Fixes #1289)
+* Fixed: Missing subtitles for some videos on SVT (Fixes #1283)
+* Added: More meta info to Apple Movie Trailers (Fixes #1288)
+* Fixed: franchise name to NPO videos in case it differs from the main show (Fixes #1291)
+* Added: seasons and episodes to items of NPO (See #1291)
+* Fixed: Remove AT5 HTML tags in description (Fixes #1292)
+* Fixed: Vier/Vijf/Zes.be broke (Fixes #1290)
+* Fixed: UR Play broke (Fixes #1286)
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
