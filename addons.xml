@@ -601,7 +601,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.1.8"
+        version="5.1.9"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -730,34 +730,35 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.1.8 - Changelog - 2020-02-13[/B]
+        <news>[B]Retrospect v5.1.9 - Changelog - 2020-03-07[/B]
 
-This is a quick fix for an NPO issue. It also contains from version 5.1.7:
-That update contains fixes for a number of channels (Dutch, Swedish, Belgian and Norwegian). We
-also added some small improvements such as &quot;air date&quot; infolabels and a new context menu entry to
-show the video information dialog window.
+This release focus on some generic GUI stuff, that makes things appear a bit nicer:
+
+ * You can now enable the setting &quot;Show thumbnail as fanart if no fanart is available&quot; to fallback to the thumbnail as fanart instead of the channel&#x27;s fanart.
+ * We introduced a standard way of showing the &quot;expire&quot; date of an item
+ * And we clarified some things in the GUI, such as when another add-on is used to display content or when an items is geographically restricted.
+
+Besides this we fixed the following channels: L1, TV4Play.se and Stievie.be.
 
 [B]Framework related[/B]
--
+* Added: option for UriHandler to open a link as text (utf-8) in case no encoding was specified.
+* Fixed: Amazon AWS sign-in
+* Added: Check to see if external add-on is installed
 
 [B]GUI/Settings/Language related[/B]
-* Added: context menu to show the video info dialog (See #1288)
-* Added: show &quot;air date&quot; as InfoLabel if a date is available
+* Changed: Move &#x27;expire&#x27; date to MediaItem (Fixes #1301)
+* Translated: Dutch(nl_NL) translations
+* Translated: Swedish (sv_SE) translations
+* Added: Add-on setting that allows the showing of thumbs as fanart if no fanart is present
 
 [B]Channel related[/B]
-* Fixed: refactoring broke NPO &#x27;recent items&#x27; (Fixes #1295)
-* Fixed: Most recent shows were not working for NRK.no (Fixes #1274)
-* Fixed: missing video item type &#x27;Variant&#x27; caused missing episodes (Fixes #1284)
-* Updated: MTG Viafree channel - enhance look and feel (Fixes #1285)
-* Fixed: VRT.nu updated some HTML pages again! (Fixes #1281)
-* Fixed: SVT Live channels (Fixes #1289)
-* Fixed: Missing subtitles for some videos on SVT (Fixes #1283)
-* Added: More meta info to Apple Movie Trailers (Fixes #1288)
-* Fixed: franchise name to NPO videos in case it differs from the main show (Fixes #1291)
-* Added: seasons and episodes to items of NPO (See #1291)
-* Fixed: Remove AT5 HTML tags in description (Fixes #1292)
-* Fixed: Vier/Vijf/Zes.be broke (Fixes #1290)
-* Fixed: UR Play broke (Fixes #1286)
+* Fixed: Stievie became VTM GO. Only live streams are available (Fixes #1310)
+* Removed: premium Norwegian channels (Fixes #1300)
+* Changed: page size to 100 for TV4 Play.se (Fixes #1313)
+* Added: duration to `single` item type (Fixes 1312)
+* Fixed: Some missing artwork in ViaFree.se (Fixes #1311)
+* Fixed: L1 Video items parsing (Fixes #1324)
+
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
@@ -830,8 +831,11 @@ show the video information dialog window.
     <description lang="de_DE">Addon für Netflix VOD Services</description>
     <disclaimer lang="de_DE">Möglicherweise sind einge Teile dieses Addons in Ihrem Land illegal, Sie sollten dies unbedingt vor der Installation überprüfen.</disclaimer>
     <summary lang="en_GB">Netflix</summary>
-    <description lang="en_GB">Netflix VOD Services Addon</description>
-    <disclaimer lang="en_GB">Some parts of this addon may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+    <description lang="en_GB">Netflix VOD Services Add-on</description>
+    <disclaimer lang="en_GB">Some parts of this add-on may not be legal in your country of residence - please check with your local laws before installing.</disclaimer>
+    <summary lang="el_GR">Νέτφλιξ</summary>
+    <description lang="el_GR">Πρόσθετο υπηρεσιών κατά παραγγελία του Νέτφλιξ</description>
+    <disclaimer lang="el_GR">Ορισμένα μέρη αυτού του προσθέτου μπορεί να μην είναι νόμιμα στην χώρα που κατοικείτε - παρακαλώ ελέγξτε τους τοπικούς νόμους πριν την εγκατάσταση.</disclaimer>
     <summary lang="nl_NL">Netflix</summary>
     <description lang="nl_NL">Bekijk Netflix films en tvprogramma's in Kodi.</description>
     <disclaimer lang="nl_NL">Sommige delen van deze add-on zijn mogelijk onwettig in jouw land - raadpleeg de lokale wetgeving alvorens deze add-on te installeren.</disclaimer>
@@ -841,8 +845,8 @@ show the video information dialog window.
     <summary lang="ko_KR">Netflix</summary>
     <description lang="ko_KR">Netflix VOD 서비스애드온</description>
     <disclaimer lang="ko_KR">일부 국가에서는 이 애드온의 일부가 불법일 수도 있으니, 설치하기전 관련 법을 확인하기 바랍니다.</disclaimer>
-    <description lang="it_IT">Netflix Addon servizi VOD</description>
-    <disclaimer lang="it_IT">Alcune parti di questo addon potrebbero non essere legali nel proprio paese di residenza - si prega di verificare le leggi locali prima dell'installazione.</disclaimer>
+    <description lang="it_IT">Netflix Add-on servizi VOD</description>
+    <disclaimer lang="it_IT">Alcune parti di questo add-on potrebbero non essere legali nel proprio paese di residenza - si prega di verificare le leggi locali prima dell'installazione.</disclaimer>
     <summary lang="hu_HU">Netflix</summary>
     <description lang="hu_HU">Netflix VOD kiegészítő a Kodihoz</description>
     <disclaimer lang="hu_HU">Előfordulhat, hogy a kiegészítő néhány része nem törvényes az Ön országában - telepítés előtt tájékozódjon a helyi törvényekről.</disclaimer>
