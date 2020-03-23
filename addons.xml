@@ -271,7 +271,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.7.0~beta1" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.7.0" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -288,13 +288,16 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
 [add] send PlaybackInit, PlaybackStarted, PlaybackStopped notifications containing video id, channel id, and the status of the playing video
 [fix] allow playback regardless of API status
     - fixes playback for strm, playlists, other add-ons, and sharing videos from devices
+[fix] finding player config, allow playback to continue when not found if possible
 [fix] fix possible loop due to invalid keys and login information
 [fix] fix playback of mpeg-dash streams if HTTP Server - Listen on IP is blank
 [upd] use a dialog to notify users of API key requirements with link to wiki
     - https://ytaddon.page.link/keys
 [rem] remove provided api keys
-[lang] pl_pl strings |contrib: drrak|
 [lang] de_de strings |contrib: tweimer|
+[lang] el_gr strings |contrib: twilight0|
+[lang] hu_hu strings |contrib: thelacesz|
+[lang] pl_pl strings |contrib: drrak|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -341,7 +344,6 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
         <summary lang="tr_TR">YouTube için eklenti</summary>
         <description lang="tr_TR">YouTube, dünya üzerindeki en büyük video paylaşma platformlarından birisidir</description>
         <disclaimer lang="tr_TR">Bu eklenti Google tarafından üretilmemiştir</disclaimer>
-        <language></language>
         <platform>all</platform>
         <license>GPL-2.0-only</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=348464</forum>
@@ -556,7 +558,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id='plugin.video.twitch' version='2.4.9' name='Twitch' provider-name='A Talented Community'>
+<addon id='plugin.video.twitch' version='2.4.10~beta1' name='Twitch' provider-name='A Talented Community'>
     <requires>
         <import addon='xbmc.python' version='2.20.0'/>
         <import addon='script.module.six' version='1.11.0'/>
@@ -570,7 +572,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point='xbmc.addon.metadata'>
         <platform>all</platform>
         <news>
-[fix] fix listing live streams
+[fix] fix live notifications
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -601,7 +603,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.1.9"
+        version="5.2.0"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -730,34 +732,22 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.1.9 - Changelog - 2020-03-07[/B]
+        <news>[B]Retrospect v5.2.0 - Changelog - 2020-03-18[/B]
 
-This release focus on some generic GUI stuff, that makes things appear a bit nicer:
-
- * You can now enable the setting &quot;Show thumbnail as fanart if no fanart is available&quot; to fallback to the thumbnail as fanart instead of the channel&#x27;s fanart.
- * We introduced a standard way of showing the &quot;expire&quot; date of an item
- * And we clarified some things in the GUI, such as when another add-on is used to display content or when an items is geographically restricted.
-
-Besides this we fixed the following channels: L1, TV4Play.se and Stievie.be.
+In this version of Retrospect we fixed some minor bugs in channels and introduced two new major changes. The first one is related to the way we detect whether playback started: we now properly inherit from the Kodi classes instead of having our own code. Secondly, we finally got rid of our `pickle` data in the item&#x27;s urls. This caused minor updates to items, such as images or dates, to make Kodi see the items as new, because the `pickle` in its url changed. We now store a reference to a pickled file in the Retrospect user data folder.
 
 [B]Framework related[/B]
-* Added: option for UriHandler to open a link as text (utf-8) in case no encoding was specified.
-* Fixed: Amazon AWS sign-in
-* Added: Check to see if external add-on is installed
+* Fixed: Issue where empty subtitle files could be stored after download (Fixes #1338)
+* Removed: The url no longer contains the full pickle of an item. Instead, it only contains a reference to an item that is located on disk (Fixes #1261)
+* Changed: use child class of `xbmc.Player` to detect playback start and stop
 
 [B]GUI/Settings/Language related[/B]
-* Changed: Move &#x27;expire&#x27; date to MediaItem (Fixes #1301)
-* Translated: Dutch(nl_NL) translations
-* Translated: Swedish (sv_SE) translations
-* Added: Add-on setting that allows the showing of thumbs as fanart if no fanart is present
+-
 
 [B]Channel related[/B]
-* Fixed: Stievie became VTM GO. Only live streams are available (Fixes #1310)
-* Removed: premium Norwegian channels (Fixes #1300)
-* Changed: page size to 100 for TV4 Play.se (Fixes #1313)
-* Added: duration to `single` item type (Fixes 1312)
-* Fixed: Some missing artwork in ViaFree.se (Fixes #1311)
-* Fixed: L1 Video items parsing (Fixes #1324)
+* Fixed: TV4 episodic items would breakt without &quot;del&quot; in title
+* Fixed: ViaFree.se streams no longer worked (Fixes #1329)
+* Fixed: Omroep Gelderland (Fixes #1331)
 
         </news>
         <assets>
@@ -808,7 +798,7 @@ Besides this we fixed the following channels: L1, TV4Play.se and Stievie.be.
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.0.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.1.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -870,30 +860,22 @@ Besides this we fixed the following channels: L1, TV4Play.se and Stievie.be.
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.0.0 (2020-03-06)
--Added watched status sync with Netflix services WIP (details on github wiki)
--Reworked add-on/kodi auto-configuration based on device and system characteristics
--Reworked MSL service
--Added support to MSL switch profile, this fixes very old issues:
-  -Requests are now performed with the right msl profile
-  -No more missing audio languages on non-owner profiles
-  -No more missing subtitle languages on non-owner profiles
-  -No more video not available error when main profile has age limits and other profile are set as adults
-  -You can update watched status on all profiles
--Added workaround to fix 4k media flag with android device 4k capable
--Added turkish language
--Changes on nfsession profile switch in order to get the profiles cookies
--Improved ESN generation on android devices
--Automatically turn off omx player on raspberry (not compatible)
--Fixed the error when opening the Export menu caused by too many exported items
--Fixed an issue that causing delayed start of services features after start playback
--Fixed issues with ios/tvos restrictions (but due to missing widevine library for now are not supported)
--Fixed service databases upgrade
--Fixed an issue that caused wrong behaviour with Reset ESN
--Fixed an issue that caused wrong behaviour with highlighted titles
--Fixed a rare issue that caused "stream continuity" to stop working
--Updated jp, kr, it, pl, hu, hr, de, fr, es translations
--A lot of other code changes
+v1.1.0 (2020-03-20)
+-Added more supplemental info to plot info
+-Added customizable color to suppl. plot info
+-Added Greek language
+-Added more results to recommendations menu
+-Improved auto-login feature (now called "profile auto-selection")
+-Improved password request in particular circumstances
+-Improvements to recognize external calls to add-on
+-Fixed msl issues with login with different account after a logout
+-Fixed an issue in the strm resume workaround
+-Fixed an issue caused broken configuration wizard on L1 android devices
+-Fixed an issue which prevented the loading of profile list with a backslash on the names
+-Fixed an issue which prevented the loading of suppl. info to plot info
+-Fixed an issue caused interruption of sending video status progress after video pause or seek
+-Updated it, de, nl translations
+-Other minor fixes
     </news>
   </extension>
 </addon>
