@@ -354,7 +354,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.11" provider-name="A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.12" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -364,7 +364,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] Python 3 - don't decode string when processing clips
+[fix] clip usher
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -558,52 +558,53 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id='plugin.video.twitch' version='2.4.10~beta1' name='Twitch' provider-name='A Talented Community'>
+<addon id="plugin.video.twitch" version="2.4.10" name="Twitch" provider-name="A Talented Community">
     <requires>
-        <import addon='xbmc.python' version='2.20.0'/>
-        <import addon='script.module.six' version='1.11.0'/>
-        <import addon='script.module.python.twitch' version='2.0.10'/>
-        <import addon='script.module.requests' version='2.9.1'/>
+        <import addon="xbmc.python" version="2.20.0"/>
+        <import addon="script.module.six" version="1.11.0"/>
+        <import addon="script.module.python.twitch" version="2.0.12"/>
+        <import addon="script.module.requests" version="2.9.1"/>
     </requires>
-    <extension point='xbmc.python.pluginsource' library='resources/lib/addon_runner.py'>
+    <extension point="xbmc.python.pluginsource" library="resources/lib/addon_runner.py">
         <provides>video</provides>
     </extension>
-    <extension point='xbmc.service' library='resources/lib/service_runner.py' start='login'/>
-    <extension point='xbmc.addon.metadata'>
+    <extension point="xbmc.service" library="resources/lib/service_runner.py" start="login"/>
+    <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
 [fix] fix live notifications
+[fix] fix clips
+[fix] double entries in followed live streams
         </news>
         <assets>
             <icon>icon.png</icon>
-            <fanart>fanart.png</fanart>
+            <fanart>fanart.jpg</fanart>
         </assets>
-        <language></language>
         <source>https://github.com/MrSprigster/Twitch-on-Kodi</source>
         <license>GPL-3.0-only</license>
         <forum>https://forum.kodi.tv/showthread.php?tid=134538</forum>
-        <summary lang='en_GB'>Twitch video plugin</summary>
-        <description lang='en_GB'>Watch your favorite gaming streams!</description>
-        <summary lang='da_DK'>Twitch video plugin</summary>
-        <description lang='da_DK'>Se dine favorit gaming streams!</description>
-        <summary lang='de_DE'>Twitch video plugin</summary>
-        <description lang='de_DE'>Schaue die besten Gaming-Streams!</description>
-        <summary lang='es_ES'>Twitch video plugin</summary>
-        <description lang='es_ES'>¡Mira los streams de tus juegos favoritos!</description>
-        <summary lang='fr_FR'>Twitch video plugin</summary>
-        <description lang='fr_FR'>Regardez les streams de vos jeux favoris !</description>
-        <summary lang='nl_NL'>Twitch video plugin</summary>
-        <description lang='nl_NL'>Bekijk je favoriete gaming-streams!</description>
-        <summary lang='nb_NO'>Tillegg for Twitch</summary>
-        <description lang='nb_NO'>Se dine favorittstrømmere!</description>
-        <summary lang='pl_PL'>Twitch video plugin</summary>
-        <description lang='pl_PL'>Oglądaj ulubione programy TwitchTV!</description>
+        <summary lang="en_GB">Twitch video plugin</summary>
+        <description lang="en_GB">Watch your favorite gaming streams!</description>
+        <summary lang="da_DK">Twitch video plugin</summary>
+        <description lang="da_DK">Se dine favorit gaming streams!</description>
+        <summary lang="de_DE">Twitch video plugin</summary>
+        <description lang="de_DE">Schaue die besten Gaming-Streams!</description>
+        <summary lang="es_ES">Twitch video plugin</summary>
+        <description lang="es_ES">¡Mira los streams de tus juegos favoritos!</description>
+        <summary lang="fr_FR">Twitch video plugin</summary>
+        <description lang="fr_FR">Regardez les streams de vos jeux favoris !</description>
+        <summary lang="nl_NL">Twitch video plugin</summary>
+        <description lang="nl_NL">Bekijk je favoriete gaming-streams!</description>
+        <summary lang="nb_NO">Tillegg for Twitch</summary>
+        <description lang="nb_NO">Se dine favorittstrømmere!</description>
+        <summary lang="pl_PL">Twitch video plugin</summary>
+        <description lang="pl_PL">Oglądaj ulubione programy TwitchTV!</description>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.0"
+        version="5.2.1"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -732,22 +733,24 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.0 - Changelog - 2020-03-18[/B]
+        <news>[B]Retrospect v5.2.1 - Changelog - 2020-03-28[/B]
 
-In this version of Retrospect we fixed some minor bugs in channels and introduced two new major changes. The first one is related to the way we detect whether playback started: we now properly inherit from the Kodi classes instead of having our own code. Secondly, we finally got rid of our `pickle` data in the item&#x27;s urls. This caused minor updates to items, such as images or dates, to make Kodi see the items as new, because the `pickle` in its url changed. We now store a reference to a pickled file in the Retrospect user data folder.
+This version removes some methods from the Kodi Python ABI that have been removed. Because of this, Retrospect broke on Kodi Matrix. Besides this, a number of channel related issues were resolved.
 
 [B]Framework related[/B]
-* Fixed: Issue where empty subtitle files could be stored after download (Fixes #1338)
-* Removed: The url no longer contains the full pickle of an item. Instead, it only contains a reference to an item that is located on disk (Fixes #1261)
-* Changed: use child class of `xbmc.Player` to detect playback start and stop
+* Fixed: handle versions with +matrix
+* Added: Vualto class to handle both VRT.Nu and KetNet
+* Removed: deprecated Kodi ABI methods
 
 [B]GUI/Settings/Language related[/B]
--
+* Fixed: if items are grouped in folders, make sure those appear at the top (See #1326)
 
 [B]Channel related[/B]
-* Fixed: TV4 episodic items would breakt without &quot;del&quot; in title
-* Fixed: ViaFree.se streams no longer worked (Fixes #1329)
-* Fixed: Omroep Gelderland (Fixes #1331)
+* Fixed: Live channel for SVT moved to GraphQL (See #1326)
+* Fixed: descriptions of AT5 had HTML tags (Fixes #1343)
+* Fixed: KetNet streams broke (Fixes #1344)
+* Fixed: issue with naming of episodes without title (Fixes #1345)
+* Changed: move clips from main list of SVT into their own folder (Fixes #1326)
 
         </news>
         <assets>
@@ -798,7 +801,7 @@ In this version of Retrospect we fixed some minor bugs in channels and introduce
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.1.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.1.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -840,9 +843,9 @@ In this version of Retrospect we fixed some minor bugs in channels and introduce
     <summary lang="hu_HU">Netflix</summary>
     <description lang="hu_HU">Netflix VOD kiegészítő a Kodihoz</description>
     <disclaimer lang="hu_HU">Előfordulhat, hogy a kiegészítő néhány része nem törvényes az Ön országában - telepítés előtt tájékozódjon a helyi törvényekről.</disclaimer>
-    <summary lang="tr_tr">Netflix</summary>
-    <description lang="tr_tr">Netflix VOD Hizmetleri Eklentisi</description>
-    <disclaimer lang="tr_tr">Bu eklentinin bazı bölümleri ikamet ettiğiniz ülkede yasal olmayabilir - lütfen yüklemeden önce yerel yasalarınıza bakın.</disclaimer>
+    <summary lang="tr_TR">Netflix</summary>
+    <description lang="tr_TR">Netflix VOD Hizmetleri Eklentisi</description>
+    <disclaimer lang="tr_TR">Bu eklentinin bazı bölümleri ikamet ettiğiniz ülkede yasal olmayabilir - lütfen yüklemeden önce yerel yasalarınıza bakın.</disclaimer>
     <assets>
       <icon>resources/media/icon.png</icon>
       <fanart>resources/media/fanart.jpg</fanart>
@@ -860,22 +863,9 @@ In this version of Retrospect we fixed some minor bugs in channels and introduce
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.1.0 (2020-03-20)
--Added more supplemental info to plot info
--Added customizable color to suppl. plot info
--Added Greek language
--Added more results to recommendations menu
--Improved auto-login feature (now called "profile auto-selection")
--Improved password request in particular circumstances
--Improvements to recognize external calls to add-on
--Fixed msl issues with login with different account after a logout
--Fixed an issue in the strm resume workaround
--Fixed an issue caused broken configuration wizard on L1 android devices
--Fixed an issue which prevented the loading of profile list with a backslash on the names
--Fixed an issue which prevented the loading of suppl. info to plot info
--Fixed an issue caused interruption of sending video status progress after video pause or seek
--Updated it, de, nl translations
--Other minor fixes
+v1.1.1 (2020-03-24)
+-Fixed critical bug caused continuous profile switching
+-Fixed unicode decode error to profile auto-selection
     </news>
   </extension>
 </addon>
