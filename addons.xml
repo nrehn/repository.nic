@@ -285,6 +285,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
+[add] support for video comments, Comments in the More... dialog |contrib: doko-desuka|
 [fix] error caused by timestamp formatting
 [fix] fix Premiere's exiting after 5 seconds |contrib: jpfox156|
 [lang] es_es strings |contrib: roliverosc|
@@ -345,7 +346,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.12" provider-name="A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.13" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -355,7 +356,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] clip usher
+[fix] stream language
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -563,9 +564,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] fix live notifications
-[fix] fix clips
-[fix] double entries in followed live streams
+[fix] language setting
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -831,6 +830,9 @@ This version removes some methods from the Kodi Python ABI that have been remove
     <disclaimer lang="ko_KR">일부 국가에서는 이 애드온의 일부가 불법일 수도 있으니, 설치하기전 관련 법을 확인하기 바랍니다.</disclaimer>
     <description lang="it_IT">Netflix Add-on servizi VOD</description>
     <disclaimer lang="it_IT">Alcune parti di questo add-on potrebbero non essere legali nel proprio paese di residenza - si prega di verificare le leggi locali prima dell'installazione.</disclaimer>
+    <summary lang="es_ES">Netflix</summary>
+    <description lang="es_ES">Complemento para los Servicios VOD de Netflix</description>
+    <disclaimer lang="es_ES">Algunas partes de este complemento pueden no ser legales en su país de residencia - Por favor, consulte con las leyes locales antes de instalar.</disclaimer>
     <summary lang="hu_HU">Netflix</summary>
     <description lang="hu_HU">Netflix VOD kiegészítő a Kodihoz</description>
     <disclaimer lang="hu_HU">Előfordulhat, hogy a kiegészítő néhány része nem törvényes az Ön országában - telepítés előtt tájékozódjon a helyi törvényekről.</disclaimer>
