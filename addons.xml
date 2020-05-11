@@ -271,7 +271,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.0" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.1~alpha2" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -285,15 +285,13 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[add] support for video comments, Comments in the More... dialog |contrib: doko-desuka|
-[add] simulate deprecated recommended home API |contrib: hedleyroos|
-[fix] error caused by timestamp formatting
-[fix] fix Premiere's exiting after 5 seconds |contrib: jpfox156|
-[fix] playlists over json-rpc |contrib: JasperE84|
-[lang] de_de strings |contrib: tweimer|
-[lang] el_gr strings |contrib: twilight0|
-[lang] es_es strings |contrib: roliverosc|
-[lang] pt_pt strings |contrib: daniel3x|
+[fix] playback failing
+[fix] viewing comments when logged in
+[fix] intermittent issue with Subscriptions
+[fix] encoding of video unavailable messages
+[upd] updates to recommendations
+[lang] pl_pl strings |contrib: drrak|
+[lang] nl_nl strings |contrib: Markman-B|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -598,7 +596,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.2"
+        version="5.2.3"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -727,25 +725,23 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.2 - Changelog - 2020-04-22[/B]
+        <news>[B]Retrospect v5.2.3 - Changelog - 2020-05-07[/B]
 
-This new version of Retrospect mainly has some under the hood changes. These should not change functionality of Retrospect.
-
-Besides this, the kijk.nl channel was updated to use the new GraphQL backend and NOS.nl and VRT.nu were fixed.
+This new version of Retrospect fixes some channel related issues and some minor core refactoring.
 
 [B]Framework related[/B]
-* Removed: some debugging code
-* Changed: moved a large part of the code from plugin.py into different `actions`
-* Fixed: internal Youtube parsing
-* Added: option to clean up Retrospect cache and session files
+* Fixed: issue where shutil.copy() or shutil.move() no longer overrides existing files in Py3
+* Fixed: issue where an empty favourite list would replace the PickleStore cache for the mainlist (Fixes #1365)
+* Changed: Use `inputstream` instead of `inputstreamaddon` for Matrix and up
 
 [B]GUI/Settings/Language related[/B]
 _None_
 
 [B]Channel related[/B]
-* Fixed: VRT.nu had some missing episodes (Fixes #1351)
-* Fixed: NOS.nl issue with Kodi Matrix
-* Updated: Kijk.nl moved to a GraphQL backend
+* Fixed: Kijk.nl PersistedQueries seem unstable
+* Fixed: Include &quot;standalone&quot; video&#x27;s for Dplay (Fixes #1361)
+* Fixed: For some ViaFree streams no subtitles were present (Fixes #1362)
+* Fixed: failed parsing of showlisting due to UTC timestamp (Fixes #1369)
 
         </news>
         <assets>
@@ -796,7 +792,7 @@ _None_
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.2.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.2.2" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -867,25 +863,8 @@ _None_
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.2.0 (2020-04-22)
--Parental control temporary disabled due to Netflix changes
--New cache management
--Add-on now is ready to works also on systems with special chars in the system path
--Implemented profile PIN protection
--Implemented masked PIN input (Kodi 19)
--Implemented auto purge cache of expired items
--Implemented paginated list of seasons
--Implemented cache to search menu
--Implemented Up Next also with "Sync of watched status with Netflix" feature
--Add support to Python 3.8
--Add title to search page
--Add profile name to homepage title
--Add a better handling of lolomo error with sync of watched status enabled
--Add romanian, swedish translation
--Improved watched status threshold
--Improved watched status update in the GUI display
--Improved catch of possible errors in events module
-To see the full list of changes read the changelog.txt
+v1.2.2 (2020-05-07)
+-Fixed a issue regression caused problems to 1080P/4K playback
     </news>
   </extension>
 </addon>
