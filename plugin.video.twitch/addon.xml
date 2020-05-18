@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.twitch" version="2.4.10" name="Twitch" provider-name="A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.1~beta1" name="Twitch" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
-        <import addon="script.module.python.twitch" version="2.0.12"/>
+        <import addon="script.module.python.twitch" version="2.0.14"/>
         <import addon="script.module.requests" version="2.9.1"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/addon_runner.py">
@@ -13,7 +13,7 @@
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] language setting
+[fix] encoding issue causing streams/videos/live notifications to be inaccessible with some languages
         </news>
         <assets>
             <icon>icon.png</icon>
