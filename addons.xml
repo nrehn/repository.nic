@@ -271,7 +271,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.2" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.3~alpha1" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -285,15 +285,8 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.python.module" library="resources/lib/"/>
     <extension point="xbmc.addon.metadata">
         <news>
-[fix] playback failing
-[fix] viewing comments when logged in
-[fix] intermittent issue with Subscriptions
-[fix] encoding of video unavailable messages
-[upd] updates to recommendations
-[upd] update logging for Kodi 19
-[lang] fr_fr strings |contrib: alan7000|
-[lang] pl_pl strings |contrib: drrak|
-[lang] nl_nl strings |contrib: Markman-B|
+[fix] fix rating videos causing and error even though it succeeded
+[upd] cache javascript player url for 4 hours, reduces http requests per play by 1
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -554,7 +547,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id="plugin.video.twitch" version="2.5.1~beta1" name="Twitch" provider-name="A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.1" name="Twitch" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -598,7 +591,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.3"
+        version="5.2.5"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -727,23 +720,21 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.3 - Changelog - 2020-05-07[/B]
+        <news>[B]Retrospect v5.2.5 - Changelog - 2020-05-18[/B]
 
-This new version of Retrospect fixes some channel related issues and some minor core refactoring.
+This version of Retrospect fixes some login related issues for VRT.nu and Dplay.se and squashes a minor bug for kijk.nl.
 
 [B]Framework related[/B]
-* Fixed: issue where shutil.copy() or shutil.move() no longer overrides existing files in Py3
-* Fixed: issue where an empty favourite list would replace the PickleStore cache for the mainlist (Fixes #1365)
-* Changed: Use `inputstream` instead of `inputstreamaddon` for Matrix and up
+* Added: option to limit certain settings to only some channel in a channel set
+* Added: option to generate a channel guid for a setting in a channel set
 
 [B]GUI/Settings/Language related[/B]
 _None_
 
 [B]Channel related[/B]
-* Fixed: Kijk.nl PersistedQueries seem unstable
-* Fixed: Include &quot;standalone&quot; video&#x27;s for Dplay (Fixes #1361)
-* Fixed: For some ViaFree streams no subtitles were present (Fixes #1362)
-* Fixed: failed parsing of showlisting due to UTC timestamp (Fixes #1369)
+* Added: option to specify a login for Dplay.se (Fixes #1364)
+* Fixed: don&#x27;t group special folders for kijk.nl (Fixes #1377)
+* Fixed: VRT.nu changed their login code (Fixes #1379)
 
         </news>
         <assets>
@@ -794,7 +785,7 @@ _None_
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.3.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.3.2" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -865,27 +856,13 @@ _None_
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.3.1 (2020-05-17)
-Note to RPI devices: credentials will be asked again a storage problem has been fixed
--Fixed KeyError issue
-
-v1.3.0 (2020-05-17)
-Note to RPI devices: credentials will be asked again a storage problem has been fixed
--Reimplemented parental control
--Add new "Top 10" menu list
--Add support to promo video trailer for custom skins
--Add metadata Season and Episode value to ListItem's
--Add metadata PlotOutline and Trailer values to ListItem's
--Continue watching is now working with Netflix watched status sync
--Fixed wrong video framerate, caused Dolby Vision signal loss and wrong colors
--Fixed an issue that caused a wrong watched status sync at end of playback
--Fixed an issue that caused missing to export some new seasons
--Fixed an issue that caused the library sync to crash in some situations
--Fixed a possible issue that can cause a wrong audio language selection on the episodes
--Fixed a possible issue that can cause streamcontinuity to crash due to empty subtitle data
--Fixed non visible media-flags to tvshows
--Updated translations en, it, pt-br, de, sv-se, hu, nl, pl
--Minor improvements/fixes
+v1.3.2 (2020-05-20)
+-Fixed some issues on chinese systems
+-Fixed errors on loading lists
+-Fixed missing plot in some skins
+-Fixed ESN generation (lower case issue)
+-Fixed UpNext regressions
+-Updated translations es, sv-se
     </news>
   </extension>
 </addon>
