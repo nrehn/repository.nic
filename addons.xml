@@ -591,7 +591,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.5"
+        version="5.2.7"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -720,21 +720,22 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.5 - Changelog - 2020-05-18[/B]
+        <news>[B]Retrospect v5.2.7 - Changelog - 2020-07-04[/B]
 
-This version of Retrospect fixes some login related issues for VRT.nu and Dplay.se and squashes a minor bug for kijk.nl.
+This new version of Retrospect addresses a number of small issues in Retrospect. It also fixes a number of channel related bugs for kijk.nl, vrt.nu and NPO.
 
 [B]Framework related[/B]
-* Added: option to limit certain settings to only some channel in a channel set
-* Added: option to generate a channel guid for a setting in a channel set
+* Fixed: cleaning up cache and cookies sometimes did not clean cookies
 
 [B]GUI/Settings/Language related[/B]
-_None_
+* Fixed: Regression bug that caused the description prefixes to not be on a new line
+* Changed: sorting code optimized and added an sort by &#x27;episode&#x27; option that users can select per folder
 
 [B]Channel related[/B]
-* Added: option to specify a login for Dplay.se (Fixes #1364)
-* Fixed: don&#x27;t group special folders for kijk.nl (Fixes #1377)
-* Fixed: VRT.nu changed their login code (Fixes #1379)
+* Fixed: VRT.nu could not log in any more (Fixes #1400)
+* Removed: SBS6, SBS9, Veronica, NET5 as they all moved to kijk.nl (Fixes #1401)
+* Fixed: Kijk.nl subtitles were missing (Fixes #1402)
+* Fixed: Too many episodes show as geo restricted in NPO
 
         </news>
         <assets>
@@ -785,7 +786,7 @@ _None_
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.5.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.6.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -856,9 +857,11 @@ _None_
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.5.1 (2020-06-27)
--Implemented fix/workaround to get resolutions until to 1080p with ARM devices
--Updated translations tr
+v1.6.0 (2020-07-04)
+-New search menu
+-New search types (by term, by audio lang, by subtitles lang)
+-Implemented option to remove titles from Continue watching list
+-Updated translations it, de, hu, tr, ro, jk, kr, pt-br, sv-se, fr, el-gr
     </news>
   </extension>
 </addon>

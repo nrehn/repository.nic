@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addon  id="plugin.video.retrospect"
-        version="5.2.5"
+        version="5.2.7"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -129,21 +129,22 @@
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.5 - Changelog - 2020-05-18[/B]
+        <news>[B]Retrospect v5.2.7 - Changelog - 2020-07-04[/B]
 
-This version of Retrospect fixes some login related issues for VRT.nu and Dplay.se and squashes a minor bug for kijk.nl.
+This new version of Retrospect addresses a number of small issues in Retrospect. It also fixes a number of channel related bugs for kijk.nl, vrt.nu and NPO.
 
 [B]Framework related[/B]
-* Added: option to limit certain settings to only some channel in a channel set
-* Added: option to generate a channel guid for a setting in a channel set
+* Fixed: cleaning up cache and cookies sometimes did not clean cookies
 
 [B]GUI/Settings/Language related[/B]
-_None_
+* Fixed: Regression bug that caused the description prefixes to not be on a new line
+* Changed: sorting code optimized and added an sort by &#x27;episode&#x27; option that users can select per folder
 
 [B]Channel related[/B]
-* Added: option to specify a login for Dplay.se (Fixes #1364)
-* Fixed: don&#x27;t group special folders for kijk.nl (Fixes #1377)
-* Fixed: VRT.nu changed their login code (Fixes #1379)
+* Fixed: VRT.nu could not log in any more (Fixes #1400)
+* Removed: SBS6, SBS9, Veronica, NET5 as they all moved to kijk.nl (Fixes #1401)
+* Fixed: Kijk.nl subtitles were missing (Fixes #1402)
+* Fixed: Too many episodes show as geo restricted in NPO
 
         </news>
         <assets>
