@@ -271,7 +271,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
   </extension>
 </addon>
 
-<addon id="plugin.video.youtube" name="YouTube" version="6.8.3~alpha1" provider-name="anxdpanic, bromix">
+<addon id="plugin.video.youtube" name="YouTube" version="6.8.3~alpha2" provider-name="anxdpanic, bromix">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -287,6 +287,9 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
         <news>
 [fix] fix rating videos causing and error even though it succeeded
 [upd] cache javascript player url for 4 hours, reduces http requests per play by 1
+[upd] use new settings format on Kodi 19
+[lang] el_gr strings |contrib: twilight0|
+[lang] hu_hu strings |contrib: thelacesz|
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -547,7 +550,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id="plugin.video.twitch" version="2.5.1" name="Twitch" provider-name="A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.2~beta1" name="Twitch" provider-name="A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -561,7 +564,8 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[fix] encoding issue causing streams/videos/live notifications to be inaccessible with some languages
+[fix] Get OAuth token on Kodi 19
+[upd] Use new settings format on Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -591,7 +595,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.7"
+        version="5.2.8"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -710,7 +714,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
         <reuselanguageinvoker>true</reuselanguageinvoker>
         <platform>all</platform>
 
-        <summary lang="en_GB">Retrospect enables playback of re-runs/catch-ups of TV shows available online.</summary>
+        <summary lang="en_GB">Retrospect enables playback of re-runs/catch-ups of TV shows available online. Some channels that are included are: NPO Start, Kijk.nl (SBS6, NET5, Veronica, SBS9), RTL XL, NOS, Nickelodeon, AT5, Omroep Flevoland, L1, RTV Drenthe, RTV Oost, RTV Noord, RTV Noord-Holland, RTV Rijnmond, Omroep West, Omroep Gelderland, Omroep Brabant, Omrop Fryslân, WOS, DTV, Omroep Venlo Omroep Horst aan de Maas, Studio 040, RTV Utrecht, Omroep Zeeland, Eén, Vier, VRT.nu, VTM, Stieve, Ketnet, DPlay, SVT, ViaFree, Viasat, UR Play, MTV, NRK, BBC, Dumpert, Fox Sports, Pathé Nederland, Hardware.info and Ons.</summary>
         <description lang="en_GB">Retrospect uses the official websites and freely available streams of different broadcasting companies (mainly Dutch, Belgian, British, Norwegian and Swedish) to make their re-run/catch-up episodes available on the Kodi platform.[CR][CR]More information can be found at https://rieter.net or the Retrospect wiki at https://github.com/retrospect-addon/plugin.video.retrospect/wiki/.</description>
         <disclaimer lang="en_GB">Retrospect is provided as is. We do not take any responsibility for possible (but highly unlikely) damage caused to your system. Nor do we take responsibility for the content that can be watched using this add-on or any consequences of using this add-on to watch content via the content providers' platforms.</disclaimer>
 
@@ -720,22 +724,26 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.7 - Changelog - 2020-07-04[/B]
+        <news>[B]Retrospect v5.2.8 - Changelog - 2020-07-09[/B]
 
-This new version of Retrospect addresses a number of small issues in Retrospect. It also fixes a number of channel related bugs for kijk.nl, vrt.nu and NPO.
+A small release for Retrospect that includes a number of new Dutch regional channels and fixes some minor issues with some of the existing channels.
 
 [B]Framework related[/B]
-* Fixed: cleaning up cache and cookies sometimes did not clean cookies
+_None_
 
 [B]GUI/Settings/Language related[/B]
-* Fixed: Regression bug that caused the description prefixes to not be on a new line
-* Changed: sorting code optimized and added an sort by &#x27;episode&#x27; option that users can select per folder
+_None_
 
 [B]Channel related[/B]
-* Fixed: VRT.nu could not log in any more (Fixes #1400)
-* Removed: SBS6, SBS9, Veronica, NET5 as they all moved to kijk.nl (Fixes #1401)
-* Fixed: Kijk.nl subtitles were missing (Fixes #1402)
-* Fixed: Too many episodes show as geo restricted in NPO
+* Added: WOS regional videos
+* Added: DTV Nieuws regional videos
+* Added: Omroep Venlo
+* Added: Omroep Horst aan de Maas
+* Added: Studio 040
+* Fixed: Pathe.nl missing thumbs caused some trailers to not list
+* Fixed: UR Play changed date format which broke parsing (Fixes #1403)
+* Fixed: Cleanup the titles in UR Play for recent and popular lists
+* Fixed: AT5 updated their API which broke listings (Fixes #1406)
 
         </news>
         <assets>
@@ -786,7 +794,7 @@ This new version of Retrospect addresses a number of small issues in Retrospect.
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.6.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.6.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -857,11 +865,9 @@ This new version of Retrospect addresses a number of small issues in Retrospect.
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.6.0 (2020-07-04)
--New search menu
--New search types (by term, by audio lang, by subtitles lang)
--Implemented option to remove titles from Continue watching list
--Updated translations it, de, hu, tr, ro, jk, kr, pt-br, sv-se, fr, el-gr
+v1.6.1 (2020-07-08)
+-Fixed broken search menu on fresh installations
+-Updated el-gr translation
     </news>
   </extension>
 </addon>
