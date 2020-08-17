@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="plugin.video.netflix" name="Netflix" version="1.7.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.7.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -17,7 +17,7 @@
     <reuselanguageinvoker>true</reuselanguageinvoker>
     <summary lang="cs_CZ">Netflix</summary>
     <description lang="cs_CZ">Plugin pro sledování filmů, seriálů online z Netflixu</description>
-    <disclaimer lang="cs_CZ">Některé části tohoto doplňku nemusí být ve vaší zemi pobytu legální - před instalací dbejte na vaše zákony.</disclaimer>
+    <disclaimer lang="cs_CZ">Použití tohoto doplňku nemusí být ve vaší zemi pobytu legální - před instalací dbejte na vaše zákony.</disclaimer>
     <summary lang="de_DE">Netflix</summary>
     <description lang="de_DE">Addon für Netflix VOD-Dienste</description>
     <disclaimer lang="de_DE">Möglicherweise ist die Verwendung dieses Addons in Ihrem Land illegal, Sie sollten dies unbedingt vor der Installation überprüfen.</disclaimer>
@@ -65,7 +65,10 @@
     <summary lang="pl_PL">Netflix</summary>
     <description lang="pl_PL">Wtyczka dla usług VOD serwisu Netflix</description>
     <disclaimer lang="pl_PL">Korzystanie z tego dodatku może być niezgodne z prawem w twoim kraju zamieszkania - przed zainstalowaniem zapoznaj się z lokalnymi przepisami.</disclaimer>
-    <assets>
+    <summary lang="he_IL">Netflix</summary>
+    <description lang="he_IL">תוסף VOD לשירות של Netflix</description>
+    <disclaimer lang="he_IL">השימוש בתוסף זה עלול להיות לא חוקי במדינת מגוריך - אנא בדוק את החוק ברשות המקומית לפני ההתקנה</disclaimer>
+	<assets>
       <icon>resources/media/icon.png</icon>
       <fanart>resources/media/fanart.jpg</fanart>
       <screenshot>resources/media/screenshot-01.jpg</screenshot>
@@ -74,7 +77,7 @@
       <screenshot>resources/media/screenshot-04.jpg</screenshot>
       <screenshot>resources/media/screenshot-05.jpg</screenshot>
     </assets>
-    <language>en cs de es fr hr hu it ja ko nl pl pt ro sv tr zh</language>
+    <language>en cs de es fr he hr hu it ja ko nl pl pt ro sv tr zh</language>
     <platform>all</platform>
     <license>MIT</license>
     <website>https://www.netflix.com</website>
@@ -82,21 +85,22 @@
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.7.0 (2020-07-28)
--Big improvement in loading lists when you have many titles to My list
--Refactor of nfsession
--Refactor/improved library code:
-  -Improved speed and cpu use in autoupdate/sync in background
-  -Suppressed continuous appearance of loading screen when autoupdate/sync in background
-  -Widgets/Favourites managed without profile selection
-  -New Import existing library feature
-  -Play From Here context menu is fixed
-  -Reintroduced UpNext fast video playback feature
-  -Very long list of improvements/fixes full list on GitHub PR-756, PR-761
--Managed error to account not reactivacted
--New Chinese (simple) language translation
--Updated translations it, sv-se, fr, de, jp, kr, hu, pl, es, pt-br, ru
--Many other changes
+v1.7.1 (2020-08-12)
+-Added Profiles menu with new profiles context menus:
+   * Set for auto-selection
+   * Set for library playback
+   These two options now are managed only from the Profiles list
+-Added setting to enable nf watched status sync with library (one way)
+-Added expert setting to customize results per page
+-Fixed add-on inaccessibility when the current used profile no more exists
+-Fixed feature "Select first unwatched" on Kodi 18.x
+-Fixed failure to update nf watched status (seem works better now)
+-Little speed improvement on add-on sequential executions
+-Better handled types of exceptions with IPC
+-Removed disable_modal_error_display expert setting
+-Some code cleaning with other improvements
+-Add Hebrew translation
+-Updated translations it, el, fr, pr_br, jp, kr, hu, po, de, ro, cz, zh_cn
     </news>
   </extension>
 </addon>
