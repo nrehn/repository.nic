@@ -33,6 +33,44 @@
     </extension>
 </addon>
 
+<addon id="service.spotifyd"
+       name="Spotifyd"
+       version="9.2.101"
+       provider-name="jant90">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+
+    <import addon="script.module.requests" version="0.0.0" />
+  </requires>
+  <extension point="xbmc.service" library="default.py">
+    <provides></provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary>Spotifyd</summary>
+    <description>
+Spotifyd (v0.2.24) is an open source Spotify client running as a UNIX daemon.
+- Use SSH/Samba to edit the config file located here:
+  ~/.kodi/userdata/addon_data/service.spotifyd/spotifyd.conf
+- Disable/enable the addon from Kodi to load the new configuration.
+    </description>
+    <disclaimer>
+
+    </disclaimer>
+    <platform>all</platform>
+    <news>
+101
+- Update to Spotifyd v0.2.24
+
+100
+- Initial addon based on Spotifyd v0.2.23    </news>
+    <assets>
+      <icon>resources/icon.png</icon>
+      <fanart>resources/fanart.png</fanart>
+
+    </assets>
+  </extension>
+</addon>
+
 <addon id="service.subtitles.opensubtitles_by_opensubtitles"
        name="OpenSubtitles.org by OpenSubtitles"
        version="5.2.14"
