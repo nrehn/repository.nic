@@ -588,7 +588,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id="plugin.video.twitch" version="2.5.2" name="Twitch" provider-name="anxdpanic, A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.3" name="Twitch" provider-name="anxdpanic, A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -602,10 +602,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[add] Add additional stream properties at playback
-[fix] Get OAuth token on Kodi 19
-[upd] Use new settings format on Kodi 19
-[upd] Update material to reflect repository changes
+[upd] use xbmcvfs.translatePath if available, clean up for Kodi 19
         </news>
         <assets>
             <icon>icon.png</icon>
