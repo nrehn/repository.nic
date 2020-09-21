@@ -632,7 +632,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.10"
+        version="5.2.12"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -761,21 +761,23 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>CC-BY-NC-SA-4.0</license>
         <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.10 - Changelog - 2020-08-17[/B]
+        <news>[B]Retrospect v5.2.12 - Changelog - 2020-09-17[/B]
 
-Just some minor fixes for DPlay.se, Nickelodeon, Pathe.nl and kijk.nl.
+This update contains fixes for AT5, SVT, TV4, SVT Oppet Arkiv and NPO. It also adds a bit more clarification on the Retrospect Vault that is used to secure credentials.
 
 [B]Framework related[/B]
 _None_
 
 [B]GUI/Settings/Language related[/B]
-_None_
+* Added: More explanation for the Retrospect Vault.
+* Fixed: Issue with grouping of items that start with HTML entities
 
 [B]Channel related[/B]
-* Changed: Add browser fingerprint to DPlay log in (Fixes #1413)
-* Fixed: Issue where Nickelodeon would break on missing images
-* Fixed: Pathe.nl updated their API version
-* Fixed: DRM token could not always be retrieved for kijk.nl
+* Fixed: &quot;Amsterdam Vandaag&quot; was missing from the AT5 channel (Fixes #1418)
+* Fixed: Some SVT videos would not play.
+* Fixed: SVT Oppet Arkiv could not play all streams (Fixes #1421)
+* Fixed: Updated the NPO Start subtitle url (Fixes #1424)
+* Added: More explanation for the Retrospect Vault.
 
         </news>
         <assets>
@@ -826,7 +828,7 @@ _None_
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.9.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.9.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -912,15 +914,13 @@ _None_
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.9.0 (2020-09-06)
--New login method "Authentication key" details on GitHub readme
--Add possibility to import library from a different folder
--Add flatted tvshow for single season (depends from kodi setting)
--Big speedup improvement for Kodi 18 in service loading and opening profiles page
--Fixed a problem that could cause the addon to not start after login unexpected errors
--Fixed a wrong behaviour that caused timeout error after credentials login fails
--Fixed context menus issues after add a new search
--Updated translations de, it, fr, pl, zh_ch, pt_br, hu, jp, kr, el_gr, es
+v1.9.1 (2020-09-18)
+-Add TV Shows/Movies Top 10
+-Add support to NFAuthenticationKey for linux
+-Fixed search results via JSON-RPC
+-Fixed an issue that cause to ask to clear search history again when you return to previous menu
+-Fixed possible wrong results on Top 10 menu due to cache TTL
+-Updated translations ro, nl
     </news>
   </extension>
 </addon>
