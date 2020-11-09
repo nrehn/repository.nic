@@ -632,7 +632,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.12"
+        version="5.2.15"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -760,24 +760,20 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
         <disclaimer lang="sv_SE">Retrospect tillgängliggörs i befintligt skick. Vi tar inget som helst ansvar för möjliga (men högst osannolika) skador på ditt system. Vi tar inte heller ansvar för innehållet som kan ses med detta tillägg eller konsekvenser av att använda tillägget för att se innehållet via innehållsleverantörernas plattformar.</disclaimer>
 
         <license>CC-BY-NC-SA-4.0</license>
-        <language>en nl de se no lt lv fi</language>
-        <news>[B]Retrospect v5.2.12 - Changelog - 2020-09-17[/B]
+        <language>en nl de sv no lt lv fi</language>
+        <news>[B]Retrospect v5.2.15 - Changelog - 2020-11-02[/B]
 
-This update contains fixes for AT5, SVT, TV4, SVT Oppet Arkiv and NPO. It also adds a bit more clarification on the Retrospect Vault that is used to secure credentials.
+This is a quick fix update for VRT.nu that broke with current site changes.
 
 [B]Framework related[/B]
 _None_
 
 [B]GUI/Settings/Language related[/B]
-* Added: More explanation for the Retrospect Vault.
-* Fixed: Issue with grouping of items that start with HTML entities
+* Added: Option to set the TV Show Title to MediaItems.
 
 [B]Channel related[/B]
-* Fixed: &quot;Amsterdam Vandaag&quot; was missing from the AT5 channel (Fixes #1418)
-* Fixed: Some SVT videos would not play.
-* Fixed: SVT Oppet Arkiv could not play all streams (Fixes #1421)
-* Fixed: Updated the NPO Start subtitle url (Fixes #1424)
-* Added: More explanation for the Retrospect Vault.
+* Fixed: VRT.nu changed stream urls which broke the channel (Fixes 1440)
+* Fixed: Folders were no longer showing for VRT.nu (Fixes 1440)
 
         </news>
         <assets>
@@ -828,7 +824,7 @@ _None_
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.10.0" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.10.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="2.26.0"/>
     <import addon="script.module.addon.signals" version="0.0.3"/>
@@ -914,12 +910,16 @@ _None_
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.10.0 (2020-10-02)
-- Add initial support to keymapping (details to Wiki)
-- Fixed regression causing PIN request each time the main menu is loaded
-- Fixed an issue that caused build_media_tag exception while watching video
-- Fixed an issue that caused build_media_tag exception while watching a non-netflix content
-- Improvements to english language and related translations
+v1.10.1 (2020-10-24)
+- Improved watched status, now videos will be marked as watched correctly (Kodi 19 all cases/Kodi 18 library only)
+- Improved loading video lists speed on slow hdd/sdcard
+- Updated some MSL endpoints
+- Implemented clean library by directory (Kodi 19)
+- Fixed problems with skins that cause add-on problems due to extrafanart
+- Fixed broken profile switch when profile autoselection was enabled
+- Fixed wrong time position sent to netflix server when player seek
+- Fixed notification error when playback a video with no subtitles (Kodi 19)
+- Add Galicial translation
     </news>
   </extension>
 </addon>
