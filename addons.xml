@@ -383,7 +383,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.15" provider-name="anxdpanic, A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.16~beta1" provider-name="anxdpanic, A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -393,7 +393,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
-[upd] Update material to reflect repository changes
+[chg] change followed, following, and unfollowing games to use gql endpoints
         </news>
         <assets>
             <icon>icon.png</icon>
@@ -403,7 +403,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
         <description lang="en_GB">python-twitch for Kodi is module for interaction with the Twitch.tv API based on python-twitch by ingwinlu.</description>
         <license>GPL-3.0-only</license>
         <source>https://github.com/anxdpanic/script.module.python.twitch</source>
-        <forum>https://twitchaddon.page.link/forum</forum>
+        <forum>https://twitchaddon.panicked.xyz/forum</forum>
         <reuselanguageinvoker>true</reuselanguageinvoker>
     </extension>
 </addon>
@@ -588,11 +588,11 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id="plugin.video.twitch" version="2.5.3" name="Twitch" provider-name="anxdpanic, A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.4~beta1" name="Twitch" provider-name="anxdpanic, A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
-        <import addon="script.module.python.twitch" version="2.0.14"/>
+        <import addon="script.module.python.twitch" version="2.0.16~beta1"/>
         <import addon="script.module.requests" version="2.9.1"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/addon_runner.py">
@@ -602,6 +602,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
     <extension point="xbmc.addon.metadata">
         <platform>all</platform>
         <news>
+[fix] followed games for users with private oauth tokens
 [upd] use xbmcvfs.translatePath if available, clean up for Kodi 19
         </news>
         <assets>
@@ -610,7 +611,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
         </assets>
         <source>https://github.com/anxdpanic/Twitch-on-Kodi</source>
         <license>GPL-3.0-only</license>
-        <forum>https://twitchaddon.page.link/forum</forum>
+        <forum>https://twitchaddon.panicked.xyz/forum</forum>
         <summary lang="en_GB">Twitch video plugin</summary>
         <description lang="en_GB">Watch your favorite gaming streams!</description>
         <summary lang="da_DK">Twitch video plugin</summary>
