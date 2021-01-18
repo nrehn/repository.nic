@@ -383,7 +383,7 @@ https://github.com/afedchin/Kodi-addon-iptvsimple/wiki/IPTV-Simple-Home</summary
     </extension>
 </addon>
 
-<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.16~beta2" provider-name="anxdpanic, A Talented Community">
+<addon id="script.module.python.twitch" name="python-twitch for Kodi" version="2.0.16" provider-name="anxdpanic, A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
@@ -589,11 +589,11 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 	</extension>
 </addon>
 
-<addon id="plugin.video.twitch" version="2.5.4~beta1" name="Twitch" provider-name="anxdpanic, A Talented Community">
+<addon id="plugin.video.twitch" version="2.5.4" name="Twitch" provider-name="anxdpanic, A Talented Community">
     <requires>
         <import addon="xbmc.python" version="2.20.0"/>
         <import addon="script.module.six" version="1.11.0"/>
-        <import addon="script.module.python.twitch" version="2.0.16~beta1"/>
+        <import addon="script.module.python.twitch" version="2.0.16"/>
         <import addon="script.module.requests" version="2.9.1"/>
     </requires>
     <extension point="xbmc.python.pluginsource" library="resources/lib/addon_runner.py">
@@ -634,7 +634,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.18"
+        version="5.2.20"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -763,26 +763,39 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>GPL-3.0-or-later</license>
         <language>en nl de sv no lt lv fi</language>
-        <news>[B]Retrospect v5.2.18 - Changelog - 2020-12-09[/B]
+        <news>[B]Retrospect v5.2.20 - Changelog - 2021-01-16[/B]
 
-A new version with fixes for TV4 Play (Sweden) (twice) and Kijk.nl. We also started using the Kodi Weblate for translations which enables us to have more translations for the add-on.
+This version of Retrospect focusses on artwork: we introduced poster artwork for channels and shows. Not all channels support them, but more will come over time.
+
+There are also some channels fixes in this build: VTM and related channels  now redirect to the VTM Go add-on instead of Retrospect. Their add-on handles the VTM channel very nicely. MTV and UR Play.se have also been fixed.
 
 [B]Framework related[/B]
-_None_
+* Changed: Don&#x27;t generate settings.xml if no template is present.
+* Added: Content type option to MediaItem and main listing.
+* Changed: Specify `offscreen` for ListItems to improve performance.
+* Changed: Code clean-up for old code related to proxies.
 
 [B]GUI/Settings/Language related[/B]
-* Updated: Use [CR] instead of \n in translations
-* Added: translation using Weblate (Kodi instance) (#1449)
+* Added: Poster artwork for Channels and MediaItems.
 
 [B]Channel related[/B]
-* Fixed: TV4 Play (Sweden) Playback broken (Fixes #1454)
-* Fixed: Some seasons would not list in Kijk.nl (Fixes #1455)
-* Fixed: TV4 Play (Sweden) broke again (Fixes #1454)
+* Added: Movies to Kijk.nl channel (Fixes #1462)
+* Updated: RTL XL thumbs for shows.
+* Updated: VTM.be, Stievie.be and VTM Nieuws are now redirecting to the VTM GO add-on (Fixes #1409, See #1462)
+* Fixed: Some vier.be clips did not play (See #1463)
+* Renamed: dplay.se is now discoveryplus.se (Fixes #1467).
+* Fixed: MTV.nl and MTV.de stopped working
+* Fixed: UR Play broke due to URL changes.
+* Updated: Channel artwork for RTL XL and Kijk.nl.
+* Updated: Dumpert artwork.
+* Updated: Pathe artwork.
+* Updated: NPO Start artwork.
 
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
             <fanart>resources/media/fanart.jpg</fanart>
+            <banner>resources/media/banner.jpg</banner>
             <screenshot>resources/media/retrospect01.jpg</screenshot>
             <screenshot>resources/media/retrospect02.jpg</screenshot>
             <screenshot>resources/media/retrospect03.jpg</screenshot>
