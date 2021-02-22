@@ -634,7 +634,7 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 </addon>
 
 <addon  id="plugin.video.retrospect"
-        version="5.2.21"
+        version="5.2.22"
         name="Retrospect"
         provider-name="Bas Rieter">
 
@@ -763,34 +763,22 @@ this is an unofficial addon. please don't ask for support in libreelec forum / i
 
         <license>GPL-3.0-or-later</license>
         <language>en nl de sv no lt lv fi</language>
-        <news>[B]Retrospect v5.2.21 - Changelog - 2021-01-17[/B]
+        <news>[B]Retrospect v5.2.22 - Changelog - 2021-01-29[/B]
 
-This version of Retrospect focusses on artwork: we introduced poster artwork for channels and shows. Not all channels support them, but more will come over time.
-
-There are also some channels fixes in this build: VTM and related channels  now redirect to the VTM Go add-on instead of Retrospect. Their add-on handles the VTM channel very nicely. MTV and UR Play.se have also been fixed.
+A minor release to fix NRK.no categories and to implement the move from Vier.be to goplay.be.
 
 [B]Framework related[/B]
-* Changed: Don&#x27;t generate settings.xml if no template is present.
-* Added: Content type option to MediaItem and main listing.
-* Changed: Specify `offscreen` for ListItems to improve performance.
-* Changed: Code clean-up for old code related to proxies.
+_None_
 
 [B]GUI/Settings/Language related[/B]
-* Added: Poster artwork for Channels and MediaItems.
+_None_
 
 [B]Channel related[/B]
-* Added: Movies to Kijk.nl channel (Fixes #1462)
-* Updated: RTL XL thumbs for shows.
-* Updated: VTM.be, Stievie.be and VTM Nieuws are now redirecting to the VTM GO add-on (Fixes #1409, See #1462)
-* Fixed: Some vier.be clips did not play (See #1463)
-* Renamed: dplay.se is now discoveryplus.se (Fixes #1467).
-* Fixed: MTV.nl and MTV.de stopped working
-* Fixed: UR Play broke due to URL changes.
-* Updated: Channel artwork for RTL XL and Kijk.nl.
-* Updated: Dumpert artwork.
-* Updated: Pathe artwork.
-* Updated: NPO Start artwork.
-* Fixed: Kijk.nl movies broke.
+* Fixed: NRK.no categories broke.
+* Fixed: Vier.be, vijf.be and zes.be moved to goplay.be
+* Fixed: NPO Thumb issue (Fixes #1479)
+
+
         </news>
         <assets>
             <icon>resources/media/icon.png</icon>
@@ -841,7 +829,7 @@ There are also some channels fixes in this build: VTM and related channels  now 
 	</extension>
 </addon>
 
-<addon id="plugin.video.netflix" name="Netflix" version="1.13.1+matrix.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
+<addon id="plugin.video.netflix" name="Netflix" version="1.14.0+matrix.1" provider-name="libdev + jojo + asciidisco + caphm + castagnait">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
     <import addon="script.module.addon.signals" version="0.0.6+matrix.1"/>
@@ -929,15 +917,15 @@ There are also some channels fixes in this build: VTM and related channels  now 
     <forum>https://forum.kodi.tv/showthread.php?tid=329767</forum>
     <source>https://github.com/CastagnaIT/plugin.video.netflix</source>
     <news>
-v1.13.1 (2021-01-25)
-- Add images to seasons list items
-- Implemented support to Kodi language setting case "User interface language"
-- Fixed "Prefer the audio/subtitle language with country code" feature
-- Fixed possible dependencies errors on new installations
-- Fixed possible service crash on slower devices like RPI
-- Better managed data chunks in some cases could cause errors on starting playback
-- Tried to better handle HTTP ReadTimeout/ConnectionError errors
-- Updated translations fr, hu, pt-br, zh-cn
+v1.14.0 (2021-02-21)
+- Converted settings xml to the new Kodi settings format type
+- Debug logging setting is now an on/off switch
+- Fixed stream continuity errors after Kodi migration (Kodi 18 to 19)
+- Fixed HTTP ReadTimeout/ConnectionError errors
+- Fixed incorrect handling of MSL errors
+- Fixed AttributeError on playback when "User interface language" is set as preferred audio
+- Updated translations de, it
+- Minor fixes/changes
     </news>
   </extension>
 </addon>
