@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="repository.nic" name="nic repo" version="0.2.2" provider-name="nic">
+<addon id="repository.nic" name="nic repo" version="0.3.0" provider-name="nic">
     <extension point="xbmc.addon.repository" name="nic repo">
-    <dir>
-        <info compressed="false">https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml</info>
-        <checksum>https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml.md5</checksum>
-        <datadir zip="true">https://raw.githubusercontent.com/nrehn/repository.nic/master/</datadir>
-    </dir>
+        <!-- Common add-ons (all Kodi versions; Kodi skips add-ons whose dependencies it can't meet) -->
+        <dir>
+            <info compressed="false">https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/nrehn/repository.nic/master/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/nrehn/repository.nic/master/</datadir>
+        </dir>
+        <!-- Kodi 22 "Piers" (alpha/beta 21.90.x and releases 22.x, not Kodi 23 alphas 22.90.x) -->
+        <dir minversion="21.90.0" maxversion="22.89.0">
+            <info compressed="false">https://raw.githubusercontent.com/nrehn/repository.nic/master/piers/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/nrehn/repository.nic/master/piers/addons.xml.md5</checksum>
+            <datadir zip="true">https://raw.githubusercontent.com/nrehn/repository.nic/master/piers/</datadir>
+        </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
-        <summary></summary>
-        <description></description>
+        <summary>Personal Kodi add-on repository</summary>
+        <description>Personal add-on repository with per-Kodi-version folders. The Kodi 22 folder contains pvr.iptvsimple nightly builds from CoreELEC (Amlogic-no, aarch64). pvr.iptvsimple is GPL-2.0-or-later; source code: https://github.com/kodi-pvr/pvr.iptvsimple</description>
         <platform>all</platform>
     </extension>
 </addon>
-
